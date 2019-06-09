@@ -1,12 +1,52 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+  <ion-toolbar color="primary">
     <ion-title>Sobre</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding color="dark">
+
+  <ion-chip color="light">
+    <ion-label>Versão: 0.0.1 - Alpha</ion-label>
+  </ion-chip>
+
+  <ion-row align-items-center>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle color="warning">Informações da equipe </ion-card-subtitle>
+        <ion-card-subtitle *ngFor="let team of team" color="light">
+          <p> {{team.name}}, {{team.age}}. - {{team.period}}</p>
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-row>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-tabs>
+
+        <ion-tab-bar slot="bottom">
+
+          <ion-tab-button expand="full" routerLink="/menu/monitor">
+            <ion-label>Monitor</ion-label>
+            <ion-icon name="pulse"></ion-icon>
+          </ion-tab-button>
+
+          <ion-tab-button expand="full" routerLink="/menu/historico">
+            <ion-label>Histórico</ion-label>
+            <ion-icon name="list"></ion-icon>
+          </ion-tab-button>
+
+          <ion-tab-button expand="full" routerLink="/menu/sobre">
+            <ion-label>Sobre</ion-label>
+            <ion-icon name="hammer"></ion-icon>
+          </ion-tab-button>
+
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
