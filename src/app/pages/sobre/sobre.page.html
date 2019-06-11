@@ -1,14 +1,15 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Sobre</ion-title>
+  <ion-toolbar color="warning">
+    <ion-title color="dark">Sobre</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding color="dark">
+    
 
-  <ion-chip color="light">
+  <!-- <ion-chip color="light">
     <ion-label>Versão: 0.0.1 - Alpha</ion-label>
-  </ion-chip>
+  </ion-chip> -->
 
   <ion-row align-items-center>
     <ion-card>
@@ -20,33 +21,33 @@
       </ion-card-header>
     </ion-card>
   </ion-row>
-
+  
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-title>
-      <ion-tabs>
-
-        <ion-tab-bar slot="bottom">
-
-          <ion-tab-button expand="full" routerLink="/menu/monitor">
-            <ion-label>Monitor</ion-label>
-            <ion-icon name="pulse"></ion-icon>
-          </ion-tab-button>
-
-          <ion-tab-button expand="full" routerLink="/menu/historico">
-            <ion-label>Histórico</ion-label>
-            <ion-icon name="list"></ion-icon>
-          </ion-tab-button>
-
-          <ion-tab-button expand="full" routerLink="/menu/sobre">
-            <ion-label>Sobre</ion-label>
-            <ion-icon name="hammer"></ion-icon>
-          </ion-tab-button>
-
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>
+    <ion-toolbar>
+      
+        <ion-tabs>
+  
+          <ion-tab-bar color="dark">
+  
+            <ion-tab-button expand="full" routerLink="/menu/monitor">
+              <ion-label>Monitor</ion-label>
+              <ion-icon name="pulse"></ion-icon>
+            </ion-tab-button>
+  
+            <ion-tab-button expand="full" routerLink="/menu/historico">
+              <ion-label color="light">Histórico</ion-label>
+              <ion-icon name="list" color="light"></ion-icon>
+            </ion-tab-button>
+  
+            <ion-tab-button expand="full" routerLink="/menu/sobre">
+              <ion-label color="warning">Sobre</ion-label>
+              <ion-icon name="hammer" color="warning"></ion-icon>
+            </ion-tab-button>
+  
+          </ion-tab-bar>
+        </ion-tabs>
+      
+    </ion-toolbar>
+  </ion-footer>

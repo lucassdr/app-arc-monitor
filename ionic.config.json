@@ -1,5 +1,8 @@
 {
   "name": "appArcMonitor",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

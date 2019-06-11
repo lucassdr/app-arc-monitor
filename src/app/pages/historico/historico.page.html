@@ -1,50 +1,52 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Histórico</ion-title>
+  <ion-toolbar color="success">
+    <ion-title color="dark">Histórico</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding color="dark">
 
+  <ion-searchbar search-icon debounce="500" animated="true" placeholder="Pesquisa" ionInput color="light"
+    cancel-button-icon [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+  
   <ion-card *ngFor="let monitor of monitorHistory">
-    <ion-item  color="dark">
+    <ion-item color="dark">
       <ion-label>
-        <p>
-          {{monitor.corrente}} {{monitor.valorCorrente}}
-          <br><hr>
-          {{monitor.tensao}} {{monitor.valorTensao}}
-          <br><hr>
-          {{monitor.tempoAR}} {{monitor.valorAA}}
-        </p>
+        {{monitor.corrente}} {{monitor.valorCorrente}}
+        <br>
+        <hr>
+        {{monitor.tensao}} {{monitor.valorTensao}}
+        <br>
+        <hr>
+        {{monitor.tempoAR}} {{monitor.valorAA}}
       </ion-label>
     </ion-item>
   </ion-card>
 
 </ion-content>
-<ion-footer>
+<ion-footer slot="bottom">
   <ion-toolbar>
-    <ion-title>
-      <ion-tabs>
 
-        <ion-tab-bar slot="bottom">
+    <ion-tabs>
 
-          <ion-tab-button expand="full" routerLink="/menu/monitor">
-            <ion-label>Monitor</ion-label>
-            <ion-icon name="pulse"></ion-icon>
-          </ion-tab-button>
+      <ion-tab-bar color="dark">
+        <ion-tab-button expand="full" routerLink="/menu/monitor">
+          <ion-label color="light">Monitor</ion-label>
+          <ion-icon name="pulse" color="light"></ion-icon>
+        </ion-tab-button>
 
-          <ion-tab-button expand="full" routerLink="/menu/historico">
-            <ion-label>Histórico</ion-label>
-            <ion-icon name="list"></ion-icon>
-          </ion-tab-button>
+        <ion-tab-button expand="full" routerLink="/menu/historico">
+          <ion-label color="success">Histórico</ion-label>
+          <ion-icon name="list" color="success"></ion-icon>
+        </ion-tab-button>
 
-          <ion-tab-button expand="full" routerLink="/menu/sobre">
-            <ion-label>Sobre</ion-label>
-            <ion-icon name="hammer"></ion-icon>
-          </ion-tab-button>
+        <ion-tab-button expand="full" routerLink="/menu/sobre">
+          <ion-label color="light">Sobre</ion-label>
+          <ion-icon name="hammer" color="light"></ion-icon>
+        </ion-tab-button>
 
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-title>
+      </ion-tab-bar>
+    </ion-tabs>
+
   </ion-toolbar>
 </ion-footer>
