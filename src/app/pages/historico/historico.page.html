@@ -6,7 +6,7 @@
 
 <ion-content padding color="dark">
 
-  <ion-searchbar search-icon debounce="500" animated="true" placeholder="Pesquisa" ionInput color="light"
+  <ion-searchbar debounce="500" animated="true" placeholder="Pesquisa" ionInput color="light"
     cancel-button-icon [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
   
   <ion-card *ngFor="let monitor of monitorHistory">
