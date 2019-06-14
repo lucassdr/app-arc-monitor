@@ -7,45 +7,60 @@
 <ion-content padding color="dark">
 
   <ion-row align-items-center>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle color="light">Máquina analisada: </ion-card-subtitle>
-        <ion-card-subtitle *ngFor="let machine of machines" color="warning">
-          <p> {{machine.title}} </p>
-        </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content color="light" *ngFor="let item of items">
-          <h6>{{item.title}} {{item.valor}}</h6>
-      </ion-card-content>
-    </ion-card>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <ion-badge color="success">Online</ion-badge>
+    </ion-col>
+    <ion-col>
+    </ion-col>
   </ion-row>
-  
+
+  <ion-card>
+    <ion-card-header>
+
+      <h5 *ngFor="let item of items">
+        {{item.date}} {{item.hour}}
+      </h5>
+      <ion-card-subtitle color="light">Máquina analisada: </ion-card-subtitle>
+      <!-- <ion-card-subtitle *ngFor="let nome of nomeFilme" color="warning">
+        <p> {{machine.name}} </p>
+      </ion-card-subtitle> -->
+    </ion-card-header>
+    <ion-card-content color="light" *ngFor="let item of items">
+      <h6>{{item.corrente}} {{item.valueCorrente}}</h6>
+      <h6>{{item.tensao}} {{item.valueTensao}}</h6>
+      <h6>{{item.mediaKwH}} {{item.valueMediaKwH}}</h6>
+      <h6>{{item.consumo}} {{item.valueConsumo}}</h6>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    
-      <ion-tabs>
 
-        <ion-tab-bar color="dark">
+    <ion-tabs>
 
-          <ion-tab-button expand="full" routerLink="/menu/monitor">
-            <ion-label color="primary">Monitor</ion-label>
-            <ion-icon name="pulse" color="primary"></ion-icon>
-          </ion-tab-button>
+      <ion-tab-bar color="dark">
 
-          <ion-tab-button expand="full" routerLink="/menu/historico">
-            <ion-label color="light">Histórico</ion-label>
-            <ion-icon name="list" color="light"></ion-icon>
-          </ion-tab-button>
+        <ion-tab-button expand="full" routerLink="/menu/monitor">
+          <ion-label color="primary">Monitor</ion-label>
+          <ion-icon name="pulse" color="primary"></ion-icon>
+        </ion-tab-button>
 
-          <ion-tab-button expand="full" routerLink="/menu/sobre">
-            <ion-label color="light">Sobre</ion-label>
-            <ion-icon name="hammer" color="light"></ion-icon>
-          </ion-tab-button>
+        <ion-tab-button expand="full" routerLink="/menu/historico">
+          <ion-label color="light">Histórico</ion-label>
+          <ion-icon name="list" color="light"></ion-icon>
+        </ion-tab-button>
 
-        </ion-tab-bar>
-      </ion-tabs>
-    
+        <ion-tab-button expand="full" routerLink="/menu/sobre">
+          <ion-label color="light">Sobre</ion-label>
+          <ion-icon name="hammer" color="light"></ion-icon>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+
   </ion-toolbar>
 </ion-footer>
