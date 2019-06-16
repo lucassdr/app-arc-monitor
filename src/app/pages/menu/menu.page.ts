@@ -20,6 +20,10 @@ export class MenuPage implements OnInit {
     {
       title: 'Sobre',
       url: '/menu/sobre'
+    },
+    {
+      title: 'Feed',
+      url: '/menu/feed'
     }
   ];
 

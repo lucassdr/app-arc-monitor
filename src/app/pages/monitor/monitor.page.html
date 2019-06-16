@@ -23,9 +23,9 @@
         {{item.date}} {{item.hour}}
       </h5>
       <ion-card-subtitle color="light">Máquina analisada: </ion-card-subtitle>
-      <!-- <ion-card-subtitle *ngFor="let nome of nomeFilme" color="warning">
+      <ion-card-subtitle *ngFor="let machine of machines" color="warning">
         <p> {{machine.name}} </p>
-      </ion-card-subtitle> -->
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content color="light" *ngFor="let item of items">
       <h6>{{item.corrente}} {{item.valueCorrente}}</h6>
@@ -43,6 +43,11 @@
     <ion-tabs>
 
       <ion-tab-bar color="dark">
+
+        <ion-tab-button expand="full" routerLink="/menu/feed">
+          <ion-label color="primary">Feed</ion-label>
+          <ion-icon name="paper"></ion-icon>
+        </ion-tab-button>
 
         <ion-tab-button expand="full" routerLink="/menu/monitor">
           <ion-label color="primary">Monitor</ion-label>
