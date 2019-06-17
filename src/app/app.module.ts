@@ -11,8 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
 
-import { Network } from '@ionic-native/network/ngx';
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +18,6 @@ import { Network } from '@ionic-native/network/ngx';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpModule],
   providers: [
     StatusBar,
-    Network,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

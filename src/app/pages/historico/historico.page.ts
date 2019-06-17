@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { DataService } from 'src/app/services/data.service';
 import { ProviderService } from 'src/app/provider/provider.service';
 
 @Component({

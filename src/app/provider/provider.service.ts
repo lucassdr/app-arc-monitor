@@ -10,6 +10,7 @@ import { Http } from '@angular/http';
 export class ProviderService {
 
   private urlGetDataFromAPi = 'http://localhost:8080/monitoring/page';
+  private urlGetReportFromTwoDates = 'http://localhost:8080/monitoring/report?dataIni=2016-02-17&dataFim=2019-02-17';
 
   constructor(public http: Http) {
     console.log('Hello ProviderService');
@@ -17,6 +18,10 @@ export class ProviderService {
 
   getHistoryMonitor(){
     return this.http.get(this.urlGetDataFromAPi);
+  }
+
+  seeReportOfTwoDates(){
+    return this.http.get(this.urlGetReportFromTwoDates);
   }
 
 }
