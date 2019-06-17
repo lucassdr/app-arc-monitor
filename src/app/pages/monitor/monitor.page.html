@@ -22,6 +22,7 @@
       <h5 *ngFor="let item of items">
         {{item.date}} {{item.hour}}
       </h5>
+      <h1> {{nome_da_maquina}}</h1>
       <ion-card-subtitle color="light">Máquina analisada: </ion-card-subtitle>
       <ion-card-subtitle *ngFor="let machine of machines" color="warning">
         <p> {{machine.name}} </p>
@@ -45,8 +46,8 @@
       <ion-tab-bar color="dark">
 
         <ion-tab-button expand="full" routerLink="/menu/feed">
-          <ion-label color="primary">Feed</ion-label>
-          <ion-icon name="paper"></ion-icon>
+          <ion-label color="light">Feed</ion-label>
+          <ion-icon name="paper" color="light"></ion-icon>
         </ion-tab-button>
 
         <ion-tab-button expand="full" routerLink="/menu/monitor">

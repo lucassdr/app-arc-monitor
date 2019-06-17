@@ -19,31 +19,29 @@ export class MonitorPage {
   public items: any;
   public machines: any;
 
+  public nome_da_maquina:string = 'ArcDynamics 29';
+
   constructor(public navCtrl: NavController, private providerService: ProviderService) {
+    
+      console.log('this.nome', this.nomeFilme)
+    
   }
 
-  ionViewDidLoad(){
-    this.providerService.getLastMovides().subscribe(
+  ngOnInit(){
+    this.retornaListaDeFilmes();
+    
+  }
+
+  retornaListaDeFilmes(){
+    this.providerService.getHistoryMonitor().subscribe(
       data => {
         const response = (data as any);
         const objeto_retorno = JSON.parse(response._body);
-        console.log('Response',objeto_retorno);
+        return objeto_retorno;
       }, error => {
         console.log(error)
       }
     )
   }
-
-  // ionViewDidLoad() {
-  //   return this.providerService.getLastMovides().subscribe(data => {
-  //     let response = (data as any);
-  //     let objeto_retorno = JSON.parse(response._body);
-  //     console.log('objrtrn', objeto_retorno);
-  //     return objeto_retorno;
-  //   }, error => {
-  //     console.log('error', error);
-  //   });
-  // }
-  
 
 }

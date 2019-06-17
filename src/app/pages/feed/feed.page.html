@@ -1,31 +1,52 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-title>feed</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor="let history of listHistory">
     <ion-item href="#" class="activated">
-      <ion-icon name="wifi" slot="start"></ion-icon>
-      <ion-label>Card Link Item 1 .activated</ion-label>
+      <!-- <ion-icon name="wifi" slot="start"></ion-icon> -->
+      <ion-label>ID: {{history.id}}</ion-label>
+      <ion-label>Corrente: {{history.corrente}}</ion-label>
+      <ion-label>Tensão: {{history.tensao}}</ion-label>
+      <ion-label>Data: {{history.registroData}}</ion-label>
     </ion-item>
 
-    <ion-item href="#">
-      <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
-    </ion-item>
-
-    <ion-item class="activated">
-      <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>Card Button Item 1 .activated</ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>Card Button Item 2</ion-label>
-    </ion-item>
   </ion-card>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-tabs>
+
+      <ion-tab-bar color="dark">
+
+        <ion-tab-button expand="full" routerLink="/menu/feed">
+          <ion-label color="danger">Feed</ion-label>
+          <ion-icon name="paper" color="danger"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/monitor">
+          <ion-label color="light">Monitor</ion-label>
+          <ion-icon name="pulse" color="light"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/historico">
+          <ion-label color="light">Histórico</ion-label>
+          <ion-icon name="list" color="light"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/sobre">
+          <ion-label color="light">Sobre</ion-label>
+          <ion-icon name="hammer" color="light"></ion-icon>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+  </ion-toolbar>
+</ion-footer>

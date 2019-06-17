@@ -12,13 +12,16 @@
   <ion-card *ngFor="let monitor of monitorHistory">
     <ion-item color="dark">
       <ion-label>
-        {{monitor.corrente}} {{monitor.valorCorrente}}
+        ID: {{monitor.id}}
         <br>
         <hr>
-        {{monitor.tensao}} {{monitor.valorTensao}}
+        Corrente: {{monitor.corrente}}
         <br>
         <hr>
-        {{monitor.tempoAR}} {{monitor.valorAA}}
+        Tensão: {{monitor.tensao}}
+        <br>
+        <hr>
+        <small>Data: {{monitor.registroData}}</small>
       </ion-label>
     </ion-item>
   </ion-card>
