@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'historico', loadChildren: '../historico/historico.module#HistoricoPageModule' },
       { path: 'config', loadChildren: '../config/config.module#ConfigPageModule' },
       { path: 'sobre', loadChildren: '../sobre/sobre.module#SobrePageModule' },
-      { path: 'feed', loadChildren: '../feed/feed.module#FeedPageModule' },
+      { path: 'calculo', loadChildren: '../calculo/calculo.module#CalculoPageModule' },
     ]
   },
   {

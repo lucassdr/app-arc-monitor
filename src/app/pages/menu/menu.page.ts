@@ -22,8 +22,8 @@ export class MenuPage implements OnInit {
       url: '/menu/sobre'
     },
     {
-      title: 'Feed',
-      url: '/menu/feed'
+      title: 'Cálculo',
+      url: '/menu/calculo'
     }
   ];
 

@@ -7,17 +7,16 @@ import { Network } from '@ionic-native/network/ngx';
 
 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.page.html',
-  styleUrls: ['./feed.page.scss'],
+  selector: 'app-calculo',
+  templateUrl: './calculo.page.html',
+  styleUrls: ['./calculo.page.scss'],
   providers: [
     ProviderService,
     Network
   ]
 })
-export class FeedPage implements OnInit {
+export class CalculoPage implements OnInit {
 
-  public lista_filmes = new Array<any>();
   public listHistory = new Array<any>();
 
   constructor(public navCtrl: NavController, private providerService: ProviderService, public network: Network) { }
