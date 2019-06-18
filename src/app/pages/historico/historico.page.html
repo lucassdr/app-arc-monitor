@@ -6,9 +6,6 @@
 
 <ion-content padding color="dark">
 
-  <ion-searchbar debounce="500" animated="true" placeholder="Pesquisa" ionInput color="light" cancel-button-icon
-    [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
-
   <ion-card *ngFor="let monitor of monitorHistory">
     <ion-item color="dark">
       <ion-label>
@@ -35,12 +32,12 @@
       <ion-tab-bar color="dark">
         <ion-tab-button expand="full" routerLink="/menu/monitor">
           <ion-label color="light">Monitor</ion-label>
-          <ion-icon name="pulse" color="light"></ion-icon>
+          <ion-icon name="tv" color="light"></ion-icon>
         </ion-tab-button>
-        
+
         <ion-tab-button expand="full" routerLink="/menu/calculo">
-          <ion-label color="light">Cálculo</ion-label>
-          <ion-icon name="calculator" color="light"></ion-icon>
+          <ion-label color="light">Relatório</ion-label>
+          <ion-icon name="pulse" color="light"></ion-icon>
         </ion-tab-button>
 
         <ion-tab-button expand="full" routerLink="/menu/historico">

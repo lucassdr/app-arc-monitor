@@ -22,8 +22,8 @@ export class CalculoPage implements OnInit {
     this.providerService.seeReportOfTwoDates().subscribe(data => {
       const response = (data as any);
       const object = JSON.parse(response._body);
-      console.log('object', object);
-      
+      this.listHistory = object;
+      console.log(this.listHistory);
     }, error => {
       console.log('error', error);
     })

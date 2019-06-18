@@ -1,23 +1,27 @@
 <ion-header>
   <ion-toolbar color="danger">
-    <ion-title>Cálculo</ion-title>
+    <ion-title>Relatório</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding color="dark">
+  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel" placeholder="Data Início"></ion-searchbar>
+  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel" placeholder="Data Fim"></ion-searchbar>
 
-  <ion-card *ngFor="let history of listHistory">
-    <ion-item href="#" class="activated">
-      <!-- <ion-icon name="wifi" slot="start"></ion-icon> -->
-      <ion-label>ID: {{history.id}}</ion-label>
-      <ion-label>Corrente: {{history.corrente}}</ion-label>
-      <ion-label>Tensão: {{history.tensao}}</ion-label>
-      <ion-label>Data: {{history.registroData}}</ion-label>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Detalhes</ion-card-subtitle>
+    </ion-card-header>
 
+    <ion-card-content>
+      <p>Corrente: {{listHistory.somaCorrente}}</p>
+      <p>Tensão: {{listHistory.somaTensao}}</p>
+      <p>Custo total: R$ {{listHistory.custoTotal}}</p>
+    </ion-card-content>
   </ion-card>
 
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
 
@@ -27,12 +31,12 @@
 
         <ion-tab-button expand="full" routerLink="/menu/monitor">
           <ion-label color="light">Monitor</ion-label>
-          <ion-icon name="pulse" color="light"></ion-icon>
+          <ion-icon name="tv" color="light"></ion-icon>
         </ion-tab-button>
 
         <ion-tab-button expand="full" routerLink="/menu/calculo">
-          <ion-label color="danger">Cálculo</ion-label>
-          <ion-icon name="calculator" color="danger"></ion-icon>
+          <ion-label color="danger">Relatório</ion-label>
+          <ion-icon name="pulse" color="danger"></ion-icon>
         </ion-tab-button>
 
         <ion-tab-button expand="full" routerLink="/menu/historico">
