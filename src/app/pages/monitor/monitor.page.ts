@@ -21,11 +21,7 @@ export class MonitorPage {
 
   public nome_da_maquina:string = 'ArcDynamics 29';
 
-  constructor(public navCtrl: NavController, private providerService: ProviderService) {
-    
-      console.log('this.nome', this.nomeFilme)
-    
-  }
+  constructor(public navCtrl: NavController, private providerService: ProviderService) {}
 
   ngOnInit(){
     this.retornaListaDeFilmes();
