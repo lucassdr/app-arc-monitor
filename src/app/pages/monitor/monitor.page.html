@@ -17,25 +17,23 @@
   </ion-row>
 
   <ion-card>
-    <ion-card-header>
-
-      <h5 *ngFor="let item of items">
-        {{item.date}} {{item.hour}}
-      </h5>
-      <h1> {{nome_da_maquina}}</h1>
-      <ion-card-subtitle color="light">Máquina analisada: </ion-card-subtitle>
-      <ion-card-subtitle *ngFor="let machine of machines" color="warning">
-        <p> {{machine.name}} </p>
-      </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content color="light" *ngFor="let item of items">
-      <h6>{{item.corrente}} {{item.valueCorrente}}</h6>
-      <h6>{{item.tensao}} {{item.valueTensao}}</h6>
-      <h6>{{item.mediaKwH}} {{item.valueMediaKwH}}</h6>
-      <h6>{{item.consumo}} {{item.valueConsumo}}</h6>
-    </ion-card-content>
+    <ion-item color="dark">
+      <ion-label>
+        ID: {{monitorHistory.id}}
+        <br>
+        <hr>
+        Corrente: {{monitorHistory.corrente}}
+        <br>
+        <hr>
+        Tensão: {{monitorHistory.tensao}}
+        <br>
+        <hr>
+        <small>Horário: {{datePage}} {{timePage}}</small>
+      </ion-label>
+    </ion-item>
   </ion-card>
 
+  <ion-img src="../../../assets/arcweld.jpg" width="20px"></ion-img>
 </ion-content>
 
 <ion-footer>

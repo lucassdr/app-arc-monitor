@@ -5,54 +5,66 @@
 </ion-header>
 
 <ion-content padding color="dark">
-    
+
 
   <!-- <ion-chip color="light">
     <ion-label>Versão: 0.0.1 - Alpha</ion-label>
   </ion-chip> -->
 
   <ion-row align-items-center>
+    <ion-col>
+    </ion-col>
     <ion-card>
       <ion-card-header>
+        <ion-card-subtitle color="warning">Informações da solução </ion-card-subtitle>
+        <ion-card-content *ngFor="let arcDesc of arcMonitoDescription" color="light">
+          <h3>Nome: {{arcDesc.nameOfSolution}}</h3>
+          <h5>Grupo: {{arcDesc.createBy}}</h5>
+          <h5>Licenciada para: {{arcDesc.licensedFor}}</h5>
+        </ion-card-content>
+        <br>
         <ion-card-subtitle color="warning">Informações da equipe </ion-card-subtitle>
         <ion-card-subtitle *ngFor="let team of team" color="light">
-          <p> {{team.name}}, {{team.age}}. - {{team.period}}</p>
+          {{team.name}}, {{team.course}} - {{team.period}}
         </ion-card-subtitle>
+
       </ion-card-header>
     </ion-card>
+    <ion-col>
+    </ion-col>
   </ion-row>
-  
+
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar>
-      
-        <ion-tabs>
-  
-          <ion-tab-bar color="dark">
-  
-            <ion-tab-button expand="full" routerLink="/menu/monitor">
-              <ion-label>Monitor</ion-label>
-              <ion-icon name="tv"></ion-icon>
-            </ion-tab-button>
+  <ion-toolbar>
 
-            <ion-tab-button expand="full" routerLink="/menu/calculo">
-              <ion-label color="light">Relatório</ion-label>
-              <ion-icon name="pulse" color="light"></ion-icon>
-            </ion-tab-button>
-  
-            <ion-tab-button expand="full" routerLink="/menu/historico">
-              <ion-label color="light">Histórico</ion-label>
-              <ion-icon name="list" color="light"></ion-icon>
-            </ion-tab-button>
-  
-            <ion-tab-button expand="full" routerLink="/menu/sobre">
-              <ion-label color="warning">Sobre</ion-label>
-              <ion-icon name="hammer" color="warning"></ion-icon>
-            </ion-tab-button>
-  
-          </ion-tab-bar>
-        </ion-tabs>
-      
-    </ion-toolbar>
-  </ion-footer>
+    <ion-tabs>
+
+      <ion-tab-bar color="dark">
+
+        <ion-tab-button expand="full" routerLink="/menu/monitor">
+          <ion-label>Monitor</ion-label>
+          <ion-icon name="tv"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/calculo">
+          <ion-label color="light">Relatório</ion-label>
+          <ion-icon name="pulse" color="light"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/historico">
+          <ion-label color="light">Histórico</ion-label>
+          <ion-icon name="list" color="light"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button expand="full" routerLink="/menu/sobre">
+          <ion-label color="warning">Sobre</ion-label>
+          <ion-icon name="hammer" color="warning"></ion-icon>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+  </ion-toolbar>
+</ion-footer>

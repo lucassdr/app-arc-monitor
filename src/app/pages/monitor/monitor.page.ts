@@ -15,29 +15,19 @@ export class MonitorPage {
   time = new Date().toLocaleTimeString();
   date = new Date().toLocaleDateString();
 
-  public nomeFilme: any;
-  public items: any;
-  public machines: any;
-
-  public nome_da_maquina:string = 'ArcDynamics 29';
+  public monitorHistory;
+  public timePage = this.time;
+  public datePage = this.date;
 
   constructor(public navCtrl: NavController, private providerService: ProviderService) {}
 
-  ngOnInit(){
-    this.retornaListaDeFilmes();
-    
+  ngOnInit() {
+    this.providerService.getHistoryMonitor().subscribe(data => {
+      const response = (data as any);
+      const object = JSON.parse(response._body);
+      this.monitorHistory = object.content[0];
+    }, error => {
+      console.log('error', error);
+    });
   }
-
-  retornaListaDeFilmes(){
-    this.providerService.getHistoryMonitor().subscribe(
-      data => {
-        const response = (data as any);
-        const objeto_retorno = JSON.parse(response._body);
-        return objeto_retorno;
-      }, error => {
-        console.log(error)
-      }
-    )
-  }
-
 }

@@ -12,7 +12,7 @@ import { ProviderService } from 'src/app/provider/provider.service';
 })
 export class HistoricoPage implements OnInit {
   public monitorHistory: any;
-  public searchTerm: string = "";
+  // public searchTerm: string = "";
 
   constructor(public navCtrl: NavController, private providerService: ProviderService) {
 

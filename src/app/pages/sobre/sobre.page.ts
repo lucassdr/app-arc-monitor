@@ -9,10 +9,14 @@ import { NavController } from '@ionic/angular';
 export class SobrePage {
 
   public team: any;
+  public arcMonitoDescription:any;
   constructor(public navCtrl: NavController) {
     this.team = [
-      { name: 'Lucas', age: 23, period: '7º período' },
-      { name: 'Ricardo', age: 99, period: '8º período' },
+      { name: 'Lucas', course: 'Sistema de Informação', period: '7º período' },
+      { name: 'Ricardo', course: 'Sistema de Informação', period: '8º período' },
+    ],
+    this.arcMonitoDescription = [
+      {nameOfSolution:'ArcMonitor', createBy:'MIG, agentes de preto', licensedFor:'ArcDynamics'},
     ]
   }
 
