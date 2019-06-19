@@ -5,22 +5,43 @@
 </ion-header>
 
 <ion-content padding color="dark">
-  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel" placeholder="Data Início"></ion-searchbar>
-  <ion-searchbar showCancelButton cancelButtonText="Custom Cancel" placeholder="Data Fim"></ion-searchbar>
+  <form (ngSubmit)="ngOnInit()">
+    <ion-item color="dark">
+      <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataInicio" name="inicio" color="light">
+      </ion-searchbar>
+      <!-- <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input> -->
+    </ion-item>
+    <ion-item color="dark">
+      <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataFim" name="fim" color="light">
+      </ion-searchbar>
+      <!-- <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea> -->
+    </ion-item>
+    <ion-row align-items-center>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+            <ion-button ion-button type="submit" block>Large</ion-button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    <!-- <ion-button class="ion-padding" ion-button type="submit" block>Large</ion-button> -->
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Detalhes</ion-card-subtitle>
-    </ion-card-header>
 
-    <ion-card-content>
-      <p>Corrente: {{listHistory.somaCorrente}}</p>
-      <p>Tensão: {{listHistory.somaTensao}}</p>
-      <p>Custo total: R$ {{listHistory.custoTotal}}</p>
-    </ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Detalhes</ion-card-subtitle>
+      </ion-card-header>
 
+      <ion-card-content>
+        <p>Corrente: {{listHistory.somaCorrente}}</p>
+        <p>Tensão: {{listHistory.somaTensao}}</p>
+        <p>Custo total: R$ {{listHistory.custoTotal}}</p>
+      </ion-card-content>
+    </ion-card>
+  </form>
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar>

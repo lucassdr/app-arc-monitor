@@ -1,6 +1,8 @@
 import { Injectable, Component } from '@angular/core';
 import { Http } from '@angular/http';
 
+
+
 // @Injectable({
 //   providedIn: 'root'
 // })
@@ -9,26 +11,28 @@ import { Http } from '@angular/http';
 @Injectable()
 export class ProviderService {
 
-  private urlGetDataFromAPi = 'http://localhost:8080/monitoring/page';
-  private urlGetReportFromTwoDates = 'http://localhost:8080/monitoring/report?dataIni=2016-02-17&dataFim=2019-02-17';
 
   private urlGetDataFromAPiIP = 'http://192.168.0.103:8080/monitoring/page';
-  private urlGetReportFromTwoDatesIP = 'http://192.168.0.103:8080/monitoring/report?dataIni=2016-02-17&dataFim=2019-02-17';
+
+  private dataIni = '2016-02-17';
+  private dataFim = '2016-10-17';
+
+  private urlGetReportFromTwoDatesIP = `http://192.168.0.103:8080/monitoring/report?dataIni=${this.dataIni}&dataFim=${this.dataFim}`;
 
   constructor(public http: Http) {
     this.getHistoryMonitor();
     this.seeReportOfTwoDates();
-    console.log('Hello ProviderService');
   }
 
   getHistoryMonitor(){
     // return this.http.get(this.urlGetDataFromAPi);
+    console.log('urlGetDataFromAPiIP' + this.urlGetDataFromAPiIP);
     return this.http.get(this.urlGetDataFromAPiIP);
   }
 
   seeReportOfTwoDates(){
+    console.log('urlGetDataFromAPiIP' + this.urlGetReportFromTwoDatesIP);
     // return this.http.get(this.urlGetReportFromTwoDates);
     return this.http.get(this.urlGetReportFromTwoDatesIP);
   }
-
 }
