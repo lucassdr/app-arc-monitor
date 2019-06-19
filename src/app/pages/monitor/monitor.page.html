@@ -16,16 +16,19 @@
     </ion-col>
   </ion-row>
 
-  <ion-card>
+  <!-- Dados locais -->
+  <ion-card *ngFor="let monitor of monitor">
+    <!-- Dados do servidor -->
+    <!-- <ion-card> -->
     <ion-item color="dark">
       <ion-label>
-        ID: {{monitorHistory.id}}
+        ID: {{monitor.id}}
         <br>
         <hr>
-        Corrente: {{monitorHistory.corrente}}
+        Corrente: {{monitor.corrente}}
         <br>
         <hr>
-        Tensão: {{monitorHistory.tensao}}
+        Tensão: {{monitor.tensao}}
         <br>
         <hr>
         <small>Horário: {{datePage}} {{timePage}}</small>

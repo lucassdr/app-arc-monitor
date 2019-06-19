@@ -20,20 +20,39 @@ export class CalculoPage implements OnInit {
   private dataInicio;
   private dataFim;
 
-  constructor(public navCtrl: NavController, private providerService: ProviderService, public http: Http) { }
-
-  ngOnInit() {
-    this.seeReportOfTwoDates().subscribe(data => {
-      const response = (data as any);
-      const object = JSON.parse(response._body);
-      this.listHistory = object;
-    }, error => {
-      console.log('error', error);
-    })
+  constructor(public navCtrl: NavController, private providerService: ProviderService, public http: Http) { 
+    this.listHistory = [
+      {
+        somaCorrente: 3,
+        somaTensao: 302,
+        custoTotal: 607
+    }
+    ]
   }
 
+  // Dados locais
+  ngOnInit() {
+    console.log('ng', this.listHistory);
+    this.listHistory;
+  }
+
+  // ngOnInit() {
+  //   this.seeReportOfTwoDates().subscribe(data => {
+  //     const response = (data as any);
+  //     const object = JSON.parse(response._body);
+  //     this.listHistory = object;
+  //   }, error => {
+  //     console.log('error', error);
+  //   })
+  // }
+
+  // seeReportOfTwoDates(){
+  //   return this.http.get(`http://192.168.0.103:8080/monitoring/report?dataIni=${this.dataInicio}&dataFim=${this.dataFim}`);
+  // }
+
   seeReportOfTwoDates(){
-    return this.http.get(`http://192.168.0.103:8080/monitoring/report?dataIni=${this.dataInicio}&dataFim=${this.dataFim}`);
+    console.log('see', this.listHistory);
+    return this.listHistory;
   }
 }
 

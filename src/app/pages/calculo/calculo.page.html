@@ -7,37 +7,45 @@
 <ion-content padding color="dark">
   <form (ngSubmit)="ngOnInit()">
     <ion-item color="dark">
-      <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataInicio" name="inicio" color="light">
+      <!-- <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataInicio" name="inicio" color="light"> -->
+      <!-- Somente local -->
+      <ion-searchbar value="17/02/2016" placeholder="Data Início" [(ngModel)]="dataInicio" name="inicio" color="light">
       </ion-searchbar>
     </ion-item>
     <ion-item color="dark">
-      <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataFim" name="fim" color="light">
+      <!-- <ion-searchbar type="date" placeholder="Data Início" [(ngModel)]="dataFim" name="fim" color="light"> -->
+      <!-- Somente local -->
+      <ion-searchbar value="17/02/2016" placeholder="Data Início" [(ngModel)]="dataFim" name="fim" color="light">
       </ion-searchbar>
     </ion-item>
     <ion-row align-items-center>
       <ion-col>
       </ion-col>
       <ion-col>
-          <ion-button expand="block" type="submit">Pesquisar</ion-button>
+        <ion-button expand="block" type="submit">Pesquisar</ion-button>
       </ion-col>
       <ion-col>
       </ion-col>
     </ion-row>
-      <ion-card>
-        <ion-item color="dark">
-          <ion-label>
-            Corrente: {{listHistory.somaCorrente}}
-            <br>
-            <hr>
-            Tensão: {{listHistory.somaTensao}}
-            <br>
-            <hr>
-            Custo total: R$ {{listHistory.custoTotal}}
-            <br>
-            <hr>
-          </ion-label>
-        </ion-item>
-      </ion-card>
+
+
+    <!-- <ion-card> -->
+    <!-- Somente local -->
+    <ion-card *ngFor="let listHistory of listHistory">
+      <ion-item color="dark">
+        <ion-label>
+          Corrente: {{listHistory.somaCorrente}}
+          <br>
+          <hr>
+          Tensão: {{listHistory.somaTensao}}
+          <br>
+          <hr>
+          Custo total: R$ {{listHistory.custoTotal}}
+          <br>
+          <hr>
+        </ion-label>
+      </ion-item>
+    </ion-card>
   </form>
 </ion-content>
 
