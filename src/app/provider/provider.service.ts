@@ -26,12 +26,10 @@ export class ProviderService {
 
   getHistoryMonitor(){
     // return this.http.get(this.urlGetDataFromAPi);
-    console.log('urlGetDataFromAPiIP' + this.urlGetDataFromAPiIP);
     return this.http.get(this.urlGetDataFromAPiIP);
   }
 
   seeReportOfTwoDates(){
-    console.log('urlGetDataFromAPiIP' + this.urlGetReportFromTwoDatesIP);
     // return this.http.get(this.urlGetReportFromTwoDates);
     return this.http.get(this.urlGetReportFromTwoDatesIP);
   }

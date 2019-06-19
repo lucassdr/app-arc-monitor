@@ -21,7 +21,6 @@ export class HistoricoPage implements OnInit {
   ngOnInit() {
     this.providerService.getHistoryMonitor().subscribe(data => {
       const response = (data as any);
-      console.log('res', response._body);
       const object = JSON.parse(response._body);
       this.monitorHistory = object.content;
     }, error => {
